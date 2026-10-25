@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Verify - TrustFund{% endblock %}
+{% block content %}
+<h1>Verify Receipt and Ledger Integrity</h1>
+<div class="box">
+    <h3>Ledger Status</h3>
+    {% if result.valid %}
+        <p class="status-ok">✅ VALID - {{ result.msg }}</p>
+    {% else %}
+        <p class="status-bad">🚨 TAMPERED at block {{ result.bad_idx }} - {{ result.msg }}</p>
+    {% endif %}
+</div>
+<div class="box">
+    <h3>Verify Your Receipt</h3>
+    <form method="POST">
+        <input type="text" name="receipt" placeholder="Enter your receipt hash" required>
+        <button type="submit">Verify</button>
+    </form>
+    {% if searched %}
+        {% if found %}
+            <p class="success">Receipt verified. Block {{ found.idx }}: {{ found.type }} of ₹{{ found.amount }} ({{ found.detail }}), recorded on {{ found.timestamp }}.</p>
+        {% else %}
+            <p class="error">No matching receipt was found in the ledger.</p>
+        {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

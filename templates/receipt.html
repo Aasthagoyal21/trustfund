@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Receipt - TrustFund{% endblock %}
+{% block content %}
+<div class="box narrow">
+    <h1>Thank you, {{ name }}! 🙏</h1>
+    <p>Donation amount: <b>₹{{ amount }}</b></p>
+    <p>Your receipt hash (please save it for future verification):</p>
+    <p class="success">{{ receipt }}</p>
+    <a class="btn" href="/verify">Verify Receipt</a>
+</div>
+{% endblock %}

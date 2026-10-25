@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Ledger - TrustFund{% endblock %}
+{% block content %}
+<h1>Public Ledger</h1>
+<div class="table-wrap">
+<table>
+    <tr>
+        <th>Index</th><th>Time</th><th>Type</th><th>Amount</th>
+        <th>Detail</th><th>Previous Hash</th><th>Hash</th>
+    </tr>
+    {% for b in chain %}
+    <tr>
+        <td>{{ b.idx }}</td>
+        <td>{{ b.timestamp }}</td>
+        <td><span class="badge {{ b.type }}">{{ b.type }}</span></td>
+        <td>₹{{ b.amount }}</td>
+        <td>{{ b.detail }}</td>
+        <td class="hash">{{ b.prev_hash }}</td>
+        <td class="hash">{{ b.hash }}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+{% endblock %}

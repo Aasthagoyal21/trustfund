@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="box hero">
+    <h1>TrustFund</h1>
+    <p>Every donation and expense, secured on a tamper-evident blockchain ledger.</p>
+    {% if session.get('name') %}
+        <p>Welcome, <b>{{ session['name'] }}</b> ({{ session['role'] }})</p>
+    {% endif %}
+    <a class="btn" href="/donate">Donate Now</a>
+    <a class="btn" href="/dashboard">View Dashboard</a>
+</div>
+{% endblock %}
