@@ -12,14 +12,16 @@ A web application that records donations and NGO expenses in a SHA-256 hash-chai
 ## Tech Stack
 Python, Flask, SQLite, hashlib (SHA-256), HTML, CSS, Chart.js
 
+## Live Demo
+https://aasthagoyal21.pythonanywhere.com
+
 ## How to Run
 1. Install Flask: `pip install flask`
 2. Start the app: `python app.py`
 3. Open `http://127.0.0.1:5000` in your browser
 
-## Demo Admin Login
-- Email: admin@trustfund.com
-- Password: admin123
+## Admin Access
+Admin credentials are not published. Please contact the project owner for a demo login.
 
 ## Tamper Demo
 1. Run `python tamper.py 100` (changes the amount of block 2)
